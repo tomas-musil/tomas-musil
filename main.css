@@ -1,0 +1,316 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+       background-image: url("old_paper6-Custom.JPG");
+    background-size: cover;
+}
+
+                h2{
+                font-size:4em;
+                font-family: 'EB Garamond';
+				text-shadow: 0 1px 0 rgba(0,0,0,0.01);
+                    -webkit-font-smoothing: antialiased;
+                }
+
+
+h3{
+    
+    font-size:2.4em;
+        font-family: 'EB Garamond';
+	text-shadow: 0 1px 0 rgba(0,0,0,0.01);
+        -webkit-font-smoothing: antialiased;  
+    margin: .2em;
+    
+}
+
+h2,h3, p {
+  width: 60%;
+  color: black;
+  -webkit-background-clip: text;
+background-blend-mode: none;
+  mix-blend-mode: hard-light;
+	}
+
+.page{
+    
+    width: 100%;
+    height: 100%;
+    /*background: rgba(255,255,255,0.4);*/
+   /* background: white;*/
+    position: relative;
+    /*background: red;*/
+}
+
+.corner-fill{
+    
+    background: transparent;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 90px;
+    height: 90px;
+    transition: .2s ease-in-out;
+    /*clip-path: polygon(100% 100%, 100% 0%, 96% 0%, 0% 96%, 0% 100%, 100% 100%);*/
+}
+
+.corner-fill:hover{
+    
+    background: translate;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 270px;
+    height: 270px;
+    cursor: pointer;
+}
+
+.corner-flip{
+      position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 50%;
+    height: 50%;
+    /*background: linear-gradient(to right bottom,white,#464646);*/
+    /*background: white;*/
+    /*clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 50% 100%, 0% 100%, 0% 0%)*/
+    
+    cursor: normal;
+}
+
+.corner-flip:after{
+    content: '';
+    position: absolute;
+    top: 51.5%;
+    left: 51.5%;
+    width: 145%;
+    height: 145%;
+    z-index: 1;
+    /* mix-blend-mode: lighten; */
+    background: linear-gradient(to bottom right, white, white 33%, #f5f5f5 34%, #f5f5f5 45%, #bfbfbf 53%, transparent 56%);
+    background: red;
+    clip-path: polygon(33% 33%, 100% 33%, 100% 10%, 10% 100% , 33% 100%, 33% 33%);
+    cursor: pointer;
+    mix-blend-mode: screen;
+
+    /*temporary measures*/
+    
+        background: linear-gradient(to bottom right, white, white 33%, #fdd93b 34%, rgb(216, 197, 145) 45%, #6d5603 53%, transparent 56%);
+    /* background: red; */
+    clip-path: polygon(33% 33%, 80% 30.5%, 100% 10%, 10% 100% , 30.5% 80%, 33% 33%);
+    cursor: pointer;
+    mix-blend-mode: overlay;
+    
+    
+}
+
+
+/*.corner-flip:hover:after{
+    background-size: initial;
+     clip-path: polygon(33% 33%, 100% 29.5%, 100% 10%, 10% 100% , 29.5% 100%, 33% 33%);
+}
+
+.corner-flip:after:hover{
+    background-size: initial;
+     clip-path: polygon(33% 33%, 100% 29.5%, 100% 10%, 10% 100% , 29.5% 100%, 33% 33%);
+}*/
+
+
+.corner-fill:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 50%;
+    width: 50%;
+    /*background: #afafaf;*/
+    z-index: 400;
+border-bottom: 2px solid white;
+    
+}
+.corner-fill:after{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    z-index: 400;
+border-right: 2px solid white;
+      
+}
+
+
+.corner-fill:after,.corner-fill:before{
+    content: '';
+    box-sizing: border-box;
+   
+    /*background: #afafaf;*/
+    z-index: 400;
+    
+    background: linear-gradient(to bottom right,white 50%, #bfbfbf 80%, gray);
+    
+   background: linear-gradient(to bottom right,transparent 50%, #c3b293 80%, #7d6a36);/*,url('../img/background.jpg');*/
+    background-origin: 0px 0px;
+    /*background-size: 1920px 1446px;*/
+    background-blend-mode: darken;
+    border-bottom-right-radius: 40%;
+    /*background-position: 60% 60%;*/
+    background-size: 110% 110%;
+    transition: background .3s ease-in-out;
+    /*background: linear-gradient(to bottom right,transparent 50%, #c3b293 80%, #7d6a36);*/
+    -moz-transition: all .3s;
+  -o-transition: all .3s;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+        box-shadow: -2px -2px 7px -6px rgba(0,0,0,0.5) inset;
+    cursor: pointer;
+    
+    /*temporary measures*/
+        
+    
+    
+    
+    
+}
+
+.corner-fill:hover:before,.corner-fill:hover:after{
+    border-bottom-right-radius: 60%;   
+    /*background-position: 0% 0%;*/
+    background-size: 135% 135%;
+    border-bottom-right-radius: 60%;    
+}
+
+.corner-fill:hover:before{
+    border-bottom: 2px solid white;
+}
+.corner-fill:hover:after{
+    border-right: 2px solid white;
+}
+/*.corner-fill:hover:before, .corner-fill:hover:after{
+    background: linear-gradient(to bottom right,white 60%, #bfbfbf 80%, gray);
+    
+}*/
+*{
+    
+    -webkit-transition-property: all;
+	-webkit-transition-duration: .3s;
+	-webkit-transition-timing-function: cubic-bezier(0, 0.35, .5, 1.7);
+    
+}
+/*h2:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/stamp_noise.jpg");
+  mix-blend-mode: lighten !important;
+  background-blend-mode: multiply;
+  pointer-events: none;
+}*/
+
+
+p.fancy-lettering::first-letter {
+    
+    font-family: 'EB Garamond Initials';
+    
+    color: red;
+    font-size: 2em;
+    
+}
+
+
+nav>ul{
+    
+    list-style: none;
+    list-style-type: none;
+    
+}
+
+nav>ul>li{
+    
+    font-family: 'EB Garamond 08';
+    font-weight: normal;
+    font-style: italic;
+    list-style: none;
+    list-style-type: none;
+    line-height: 120px;
+    
+}
+nav>ul>li>a{
+    
+    font-size: 54px;
+    text-decoration: none;
+    border-bottom: 1px solid;
+    display: inline-block;
+    line-height: 45px;
+    mix-blend-mode: darken;
+    text-transform: lowercase;
+    margin-bottom: 10px;
+    color: #5a5a5a;
+    transition-property: color, text-shadow, border-bottom, margin;
+    transition-timing-function: linear;
+    transition-duration: .2s;
+    box-sizing: border-box;
+}
+
+nav>ul>li>a:hover{
+    color: #000000;
+    margin-bottom: 10px;
+    border-bottom: 1px solid;
+    transition-property: color, text-shadow, border-bottom, margin;
+    transition-timing-function: linear;
+    transition-duration: .2s;    
+}
+nav a{
+    
+    color: inherit;
+    text-decoration: none;
+    
+}
+
+
+#main-menu{
+    text-align: left;
+    transition: none; 
+}
+
+#main-wrap {
+    text-align: center
+}
+
+.align{
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 5%;
+}
+.center-hor{/*todo: polyfill for no transform browsers*/
+    
+   /* margin-left: 50% !important;
+    transform: translateX(-50%);//BUG in Chrome and FF: translate disables mix-blend-mode
+    */
+    
+}
+
+#SVG-overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+}
+
+h1.page-title{
+    
+    font-family: 'EB Garamond SC 08';
+    font-size: 92px;
+    text-align: center;
+    /*padding: 20px;*/
+        margin: 0;
+    margin-top: 20px;
+
+    
+}
