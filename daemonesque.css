@@ -1,8 +1,0 @@
-/* Daemonesque - ASCII */
-@font-face {
-  font-family: 'Daemonesque';
-  font-style: normal;
-  font-weight: 400;
-		  src: local('DAEMONES'), local('Daemonesque'), local('daemonesque'),url('../fonts/daemonesque/Daemonesque.ttf') format('truetype');
-}
-
