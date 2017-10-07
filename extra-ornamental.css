@@ -1,0 +1,8 @@
+/* pacifico-regular - latin_latin-ext */
+@font-face {
+  font-family: 'Extra Ornamental';
+  font-style: normal;
+  font-weight: 400;
+		  src: local('extra-ornamental-no-2'), local('ExtraOrnamentalNo2'), local('Extra Ornamental'),url('../fonts/extra-ornamental/ExtraOrnamentalNo2.ttf') format('truetype');
+}
+
