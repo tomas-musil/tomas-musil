@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="cz">
+<head>
+	<meta charset="windows-1250">
+	<title>Symposion 2017</title>
+	<link rel="stylesheet" href="merriweather.css">
+	<link rel="stylesheet" href="extra-ornamental.css">
+	<link rel="stylesheet" href="daemonesque.css">
+	<link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="js/lipsum/lorem.js"></script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src = "js/utils.js"></script>
+    
+  <style>
+  
+    #logo {
+      float: left;
+      width: 60%;
+      z-index: 3;
+    }
+    
+    #tablet-menu {
+      position: fixed;
+      display: none;
+      top: 0;
+      left: 0;
+      padding-left: 25%;
+      background-color: rgba(255, 255, 0, 0.4);
+      border-bottom: solid black 3px;
+      width: 100%; 
+      height: 15%;
+      z-index: 2;
+      text-align: center;
+      vertical-align: text-bottom;
+    }
+    
+    #mobile-menu {display: none}
+    
+    #mobile-link {
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      text-align: center;
+      background-color: rgba(255, 255, 0, 0.6);
+    }
+    
+    .link {
+      position: relative;
+      padding: 0 6.5%;
+      top: 70%;
+      font-size: 20px;
+      color: black;     
+    }
+    
+    .icon {
+      margin: 2%;
+      list-style-type: none;
+      z-index: 6;
+    }
+  
+    @media screen and (max-width:1000px) {
+      #logo {
+        position: fixed;
+        width: 25%;
+      }
+      
+      #main-menu {display: none}
+      
+      #tablet-menu {display: block}
+      
+      #SVG-overlay {display: none}
+
+      h2, h3, p {width: 100%}
+      
+      #main-content {margin-top: 10%}
+    }
+    
+    @media screen and (max-width:700px) {
+      #logo {
+        position: relative;
+        width: 60%;
+        float: none;
+      }
+      
+      #tablet-menu {display: none}
+      
+      #mobile-menu {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        transition: none; 
+        z-index: 5;
+      }
+      
+      .link {
+        display: block;
+        margin: 5%;
+        float: none;
+        font-size: 30px;
+        z-index:4;
+      }
+      
+      #main-content {margin-top: 0}
+      
+      
+    }
+  
+  </style>  
+    
+  <script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+  
+</head>
+<body>
+  
+  <div id="tablet-menu" >
+    <a class="link" href="#b1">O akci</a>
+    <a class="link" href="#b2">Program</a>
+    <a class="link" href="#b3">Kontakt</a>
+    <a class="link" href="#b4">Cesta</a>
+  </div>
+  
+  <div id="mobile-menu">
+    <li class="icon">
+      <a href="javascript:void(0);" style="font-size:30px; color: black; z-index: 10" onclick="MobileMenu()"><i id="icon" class="fa fa-bars"></i></a>
+    </li>
+    <div id="mobile-link" style="display: none">
+      <a class="link" onclick="MobileMenu()" href="#b1">O akci</a>
+      <a class="link" onclick="MobileMenu()" href="#b2">Program</a>
+      <a class="link" onclick="MobileMenu()" href="#b3">Kontakt</a>
+      <a class="link" onclick="MobileMenu()" href="#b4">Cesta</a>
+    </div>
+  </div>
+  	
+	<div id = "main-wrap" class = "body-and-soul">
+    <img id="logo" src="logo.png">
+    <figure id="main-content" data-pointedTo class = "body align align-left"> 
+      <p id="b1" style="font-size: 50px">O akci</p> 
+      <p style="text-align: left"><img src="vrTELO.jpg" style="float:left; width: 30%; margin: 0 10px; border: solid 1px black">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer imperdiet lectus quis justo. Et harum quidem rerum facilis est et expedita distinctio. Fusce tellus. Nullam sit amet magna in magna gravida vehicula. Cras pede libero, dapibus nec, pretium sit amet, tempor quis. Aliquam erat volutpat. Phasellus enim erat, vestibulum vel, aliquam a, posuere eu, velit. Aliquam in lorem sit amet leo accumsan lacinia. Etiam quis quam. Donec ipsum massa, ullamcorper in, auctor et, scelerisque sed, est. Integer rutrum, orci vestibulum ullamcorper ultricies, lacus quam ultricies odio, vitae placerat pede sem sit amet enim. Cras pede libero, dapibus nec, pretium sit amet, tempor quis. Nullam dapibus fermentum ipsum. Integer vulputate sem a nibh rutrum consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus ac leo pretium faucibus. Nullam faucibus mi quis velit. Praesent dapibus. Proin mattis lacinia justo.</p>
+
+      <p id="b2" style="font-size: 50px">Program</p>
+      <p style="text-align: right"><img src="pisTELO.jpg" style="float:right; width: 30%; margin: 0 10px; border: solid 1px black">Nullam dapibus fermentum ipsum. Duis risus. Sed elit dui, pellentesque a, faucibus vel, interdum nec, diam. Morbi scelerisque luctus velit. Aliquam erat volutpat. Curabitur sagittis hendrerit ante. Pellentesque arcu. Aliquam ornare wisi eu metus. Nulla accumsan, elit sit amet varius semper, nulla mauris mollis quam, tempor suscipit diam nulla vel leo. Aenean id metus id velit ullamcorper pulvinar.Nullam dapibus fermentum ipsum. Duis risus. Sed elit dui, pellentesque a, faucibus vel, interdum nec, diam. Morbi scelerisque luctus velit. Aliquam erat volutpat. Curabitur sagittis hendrerit ante. Pellentesque arcu. Aliquam ornare wisi eu metus. Nulla accumsan, elit sit amet varius semper, nulla mauris mollis quam, tempor suscipit diam nulla vel leo. Aenean id metus id velit ullamcorper pulvinar.</p>
+
+      <p id="b3" style="font-size: 50px">Kontakt</p>
+      <p style="text-align: left"><img src="vrTELO.jpg" style="float:left; width: 30%; margin: 0 10px; border: solid 1px black">Fusce dui leo, imperdiet in, aliquam sit amet, feugiat eu, orci. Maecenas aliquet accumsan leo. Mauris elementum mauris vitae tortor. Nunc auctor. Donec iaculis gravida nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Quisque tincidunt scelerisque libero. Pellentesque pretium lectus id turpis. Praesent id justo in neque elementum ultrices. Nunc auctor. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Aliquam erat volutpat. Pellentesque pretium lectus id turpis. Aliquam erat volutpat. Vestibulum fermentum tortor id mi. Etiam egestas wisi a erat. Nunc tincidunt ante vitae massa. Aenean placerat.</p>
+
+      <p id="b4" style="font-size: 50px">Cesta</p>
+      <p style="text-align: right"><img src="leTELO.jpg" style="float:right; width: 30%; margin: 0 10px; border: solid 1px black">Nulla pulvinar eleifend sem. In sem justo, commodo ut, suscipit at, pharetra vitae, orci. Nulla non lectus sed nisl molestie malesuada. Aenean placerat. Aliquam id dolor. Morbi scelerisque luctus velit. Nullam justo enim, consectetuer nec, ullamcorper ac, vestibulum in, elit. Integer imperdiet lectus quis justo. Nulla quis diam. Fusce dui leo, imperdiet in, aliquam sit amet, feugiat eu, orci. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Integer tempor.Nulla pulvinar eleifend sem. In sem justo, commodo ut, suscipit at, pharetra vitae, orci. Nulla non lectus sed nisl molestie malesuada. Aenean placerat. Aliquam id dolor. Morbi scelerisque luctus velit. Nullam justo enim, consectetuer nec, ullamcorper ac, vestibulum in, elit. Integer imperdiet lectus quis justo. Nulla quis diam. Fusce dui leo, imperdiet in, aliquam sit amet, feugiat eu, orci. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Integer tempor.Nulla pulvinar eleifend sem. In sem justo, commodo ut, suscipit at, pharetra vitae, orci. Nulla non lectus sed nisl molestie malesuada. Aenean placerat. Aliquam id dolor. Morbi scelerisque luctus velit. Nullam justo enim, consectetuer nec, ullamcorper ac, vestibulum in, elit. Integer imperdiet lectus quis justo. Nulla quis diam. Fusce dui leo, imperdiet in, aliquam sit amet, feugiat eu, orci. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Integer tempor.</p>
+    </figure>
+    
+    <nav id = "main-menu" class = "soul align align-right">
+	        <ul>
+	            <li  class = "underline-wrap-thin">
+	                <a data-pointsTo="brain" href="#b1" class="underline-inside">O akci</a></li>
+	            
+                <li class = "underline-wrap-thin">
+	                <a data-pointsTo="heart" href="#b2" class="underline-inside">Program</a></li>
+                
+                <li class = "underline-wrap-thin">
+	                <a data-pointsTo="junk" href="#b3" class="underline-inside">Kontakt</a></li>
+	            
+	            <li class = "underline-wrap-thin">
+	                <a data-pointsTo="foots" href="#b4" class="underline-inside">Cesta</a></li>
+	        </ul>
+	    </nav>
+	  </div>
+	
+	
+	<script>
+        var IDglobal = 0;
+        function getDocHeight() {
+    var D = document;
+    return Math.max(
+        D.body.scrollHeight, D.documentElement.scrollHeight,
+        D.body.offsetHeight, D.documentElement.offsetHeight,
+        D.body.clientHeight, D.documentElement.clientHeight
+    );
+}
+        
+        var svg; //needed to be global
+        var svgNS = "http://www.w3.org/2000/svg"; 
+        var pointers = $('*[data-pointsTo]');
+        var pointee = $('[data-pointedto]').first();//TODO: create more elaborate selector
+        //console.log(pointee.position().left);
+        var coordRef = {'brain':{x:.66,y:.07},
+                       'heart':{x:.66,y:.31},
+                       'junk':{x:.66,y:.54},
+                       'foots':{x:.66,y:.75},};
+        
+        var initSVG = function(){
+            
+            var o = document.createElementNS(svgNS,"svg");
+            document.body.appendChild(o);
+            o.setAttribute("id","SVG-overlay");
+            
+            return o;
+            
+        }
+        
+        
+        
+        var resizeSVG = function(){
+            if(document.getElementById("SVG-overlay") == null){
+                svg = initSVG();
+            }
+            
+            /*svg.setAttribute("height",  window.innerHeight);
+            svg.setAttribute("width",   window.innerWidth);*/
+            svg.style.height= getDocHeight()  + 'px';
+            svg.style.width=  '100%';
+            updateThings(); 
+        }
+        
+        var makeLine = function(x1,y1,x2,y2,key, rest = []){
+        	var line = null;
+	 if(!svg){ svg = initSVG();}  
+	 if(!svg.getElementById(key)){ 
+            var line = document.createElementNS(svgNS,"line");
+		}else{
+		line = svg.getElementById(key);
+		}
+             line.setAttributeNS(null,'id',key);
+             line.setAttributeNS(null,'x1',x1);
+             line.setAttributeNS(null,'y1',y1);
+             line.setAttributeNS(null,'x2',x2);
+             line.setAttributeNS(null,'y2',y2);
+                if(typeof rest['color'] === 'undefined'){
+             	line.setAttributeNS(null,"stroke","#000000");
+                line.style.stroke = "#000000";
+                }else{
+             	line.setAttributeNS(null,"stroke",rest['color']);            line.style.stroke = rest['color'];
+		}
+           
+                if(typeof rest['width'] === 'undefined'){
+             	line.setAttributeNS(null,"stroke-width",'1');
+                line.style.strokeWidth = '1px';
+                }else{
+             	line.setAttributeNS(null,"stroke",rest['width']);            line.style.stroke = rest['width'] + 'px';
+		}
+	 svg.append(line);
+            
+        }
+        
+        window.addEventListener("resize",resizeSVG);
+        window.addEventListener("load", doItAll);
+	window.addEventListener("scroll",updateThings);	
+	function uid(){
+	if(typeof id == 'undefined'){
+		window.id = 0;
+		}
+	return id++;
+	}        
+        
+        function doItAll(){
+            
+             svg = initSVG();  
+             resizeSVG();
+	     updateThings();
+        }
+        
+	function updateThings(){
+	
+                                               
+             pointers.each(function(){
+            
+             var e = $(this);
+                 var u;
+	if(!e.attr('data-key')){
+		u = uid();
+		e.attr('data-key',u);
+		}else{
+		u = e.attr('data-key');
+		}
+                 var x = pointee.position().left + coordRef[e.attr('data-pointsTo')].x * pointee.width();
+                 var y = pointee.position().top + coordRef[e.attr('data-pointsTo')].y * pointee.height();
+		console.log('x:',x," ; y: ", y);
+		var mainMenu = $("#main-menu");
+		var left = mainMenu.position().left;
+		mainMenu.css({'position':'absolute','top':window.scrollY,'right':'0px'});
+	 
+             makeLine(x,y,  left + e.position().left, e.position().top + e.height() + window.scrollY,u,{'width':'2'});
+            
+             console.log(e);
+             });
+	}        
+    
+    </script>
+    
+    <script>
+function MobileMenu() {
+    var x = document.getElementById("mobile-link");
+    var y = document.getElementById("icon");
+    var z = document.getElementById("mobile-menu")
+      if (x.style.display === "none") {
+        x.style.display = "block";
+        y.className = "fa fa-close";
+        z.style.backgroundColor = "rgba(255, 255, 0, 0.6)";
+    } else {
+        x.style.display = "none";
+        y.className = "fa fa-bars";
+        z.style.backgroundColor = "transparent";
+    }
+}
+</script>
+</body>
+</html>
