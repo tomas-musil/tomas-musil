@@ -1,0 +1,265 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <meta charset="windows-1250">
+  <title>Test</title> 
+  
+<script>
+   
+  function test() {
+    
+    var a = document.getElementById("fixdiv").offsetTop + window.pageYOffset;
+    var b = document.getElementById("fixdiv").offsetLeft;
+    
+    var x = document.getElementById("div1").offsetTop;
+    var y = document.getElementById("div2").offsetTop;
+    var z = document.getElementById("div3").offsetTop;
+    
+    var text = document.getElementById("text").offsetTop + 40;
+    
+    var svg1 = document.getElementById("svg1");
+    var svg2 = document.getElementById("svg2");
+    var svg3 = document.getElementById("svg3");
+    var svg4 = document.getElementById("svg4");
+    
+    var line1 = document.getElementById("line1");
+    var line2 = document.getElementById("line2");
+    var line3 = document.getElementById("line3");
+    var line4 = document.getElementById("line4");
+     
+    
+    if (a < x) {
+      svg1.style.height = x - a;
+      svg1.style.marginTop = a;
+      line1.setAttribute ("x1", "0");
+      line1.setAttribute ("y1", "100%");
+      line1.setAttribute ("x2", "100%");
+      line1.setAttribute ("y2", "0");   
+    }
+    
+    else {
+      svg1.style.height = a - x;
+      svg1.style.marginTop = x;
+      line1.setAttribute ("x1", "0");
+      line1.setAttribute ("y1", "0");
+      line1.setAttribute ("x2", "100%");
+      line1.setAttribute ("y2", "100%");
+    }
+    
+        
+    
+    if (a < y) {
+      svg2.style.height = y - a;
+      svg2.style.marginTop = a;
+      line2.setAttribute ("x1", "0");
+      line2.setAttribute ("y1", "100%");
+      line2.setAttribute ("x2", "100%");
+      line2.setAttribute ("y2", "0");   
+    }
+    
+    else {
+      svg2.style.height = a - y;
+      svg2.style.marginTop = y;
+      line2.setAttribute ("x1", "0");
+      line2.setAttribute ("y1", "0");
+      line2.setAttribute ("x2", "100%");
+      line2.setAttribute ("y2", "100%");
+    }
+    
+    
+    
+    if (a < z) {
+      svg3.style.height = z - a;
+      svg3.style.marginTop = a;
+      line3.setAttribute ("x1", "0");
+      line3.setAttribute ("y1", "100%");
+      line3.setAttribute ("x2", "100%");
+      line3.setAttribute ("y2", "0");   
+    }
+    
+    else {
+      svg3.style.height = a - z;
+      svg3.style.marginTop = z;
+      line3.setAttribute ("x1", "0");
+      line3.setAttribute ("y1", "0");
+      line3.setAttribute ("x2", "100%");
+      line3.setAttribute ("y2", "100%");
+    } 
+    
+    if (a < text) {
+      svg4.style.height = text - a;
+      svg4.style.marginTop = a;
+      line4.setAttribute ("x1", "67%");
+      line4.setAttribute ("y1", "100%");
+      line4.setAttribute ("x2", "100%");
+      line4.setAttribute ("y2", "0");
+      document.getElementById("line4hor").setAttribute ("y1", "100%");
+      document.getElementById("line4hor").setAttribute ("y2", "100%");
+         
+    }
+    
+    else {
+      svg4.style.height = a - text;
+      svg4.style.marginTop = text;
+      line4.setAttribute ("x1", "67%");
+      line4.setAttribute ("y1", "0");
+      line4.setAttribute ("x2", "100%");
+      line4.setAttribute ("y2", "100%");
+      document.getElementById("line4hor").setAttribute ("y1", "0");
+      document.getElementById("line4hor").setAttribute ("y2", "0");
+    }
+    
+  }
+  
+  
+
+  function hover_on() {
+  
+    line1.style.stroke = "green";
+    line2.style.stroke = "green";
+    line3.style.stroke = "green";
+  
+  }
+  
+  function hover_off() {
+  
+    line1.style.stroke = "yellow";
+    line2.style.stroke = "blue";
+    line3.style.stroke = "red";
+  
+  }
+
+</script>
+    
+    <style>
+    
+    #div1 {
+      position: absolute;
+      margin-top: 50px;
+      width: 100px;
+      height: 100px;
+      background-color: yellow;
+    }
+    
+    #div2 {
+      position: absolute;
+      margin-top: 200px;
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+    }
+    
+    #div3 {
+      position: absolute;
+      margin-top: 400px;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+    
+    #fixdiv {
+      position: fixed;
+      margin-top: 150px;
+      margin-left: 75%;
+      width: 100px;
+      height: 100px;
+      background-color: green;
+    }
+    
+    #svg1 {
+       position: absolute;
+       margin-top: 50px; 
+       margin-left: 100px;
+       height: 100px;
+    }
+    
+    #svg2 {
+       position: absolute;
+       margin-top: 150px;
+       margin-left: 100px; 
+       height: 50px;
+    }
+    
+    #svg3 {
+       position: absolute;
+       margin-top: 150px;
+       margin-left: 100px; 
+       height: 250px;
+    }
+    
+    #svg4 {
+       position: absolute;
+       margin-top: 150px;
+       margin-left: 50px; 
+       height: 590px;
+    }
+    
+    
+    #text {
+      position: absolute;
+      margin-top: 700px;
+      margin-left: 50px;
+      margin-right: 50%;
+    }
+    
+    </style>
+  
+  </head>
+<body style="height: 2000px; margin: 0" onscroll="test()">
+
+<svg id="svg1">
+  <line id="line1" x1="0" y1="0" x2="100%" y2="100%" style="position: absolute; stroke: yellow; stroke-width: 3" />
+  Sorry, your browser does not support inline SVG.
+</svg>
+
+<svg id="svg2">
+  <line id="line2" x1="0" y1="100%" x2="100%" y2="0" style="position: absolute; stroke: blue; stroke-width: 3" />
+  Sorry, your browser does not support inline SVG.
+</svg>
+
+<svg id="svg3">
+  <line id="line3" x1="0" y1="100%" x2="100%" y2="0" style="position: absolute; stroke: red; stroke-width: 3" />
+  Sorry, your browser does not support inline SVG.
+</svg>
+
+<svg id="svg4">
+  <line id="line4hor"x1="100" y1="100%" x2="67%" y2="100%" style="position: absolute; stroke: brown; stroke-width: 5" />
+  <line id="line4" x1="67%" y1="100%" x2="100%" y2="0" style="position: absolute; stroke: brown; stroke-width: 3" />
+  Sorry, your browser does not support inline SVG.
+</svg>
+
+<div id="div1"></div>
+
+<div id="div2"></div>
+
+<div id="div3"></div>
+
+<div id="fixdiv" onmouseover="hover_on()" onmouseout="hover_off()"></div>
+
+
+<div id="text">
+  <h1>O akci</h1>
+
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec vitae arcu. Curabitur bibendum justo non orci. Etiam posuere lacus quis dolor. Vivamus porttitor turpis ac leo. Nulla quis diam. Praesent vitae arcu tempor neque lacinia pretium. Etiam commodo dui eget wisi. Nullam eget nisl. Ut tempus purus at lorem. Duis condimentum augue id magna semper rutrum. Vivamus luctus egestas leo. Aliquam erat volutpat. Phasellus faucibus molestie nisl. Maecenas ipsum velit, consectetuer eu lobortis ut, dictum at dui. Donec vitae arcu. Nullam dapibus fermentum ipsum. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</p>
+
+  <p>Proin in tellus sit amet nibh dignissim sagittis. Duis condimentum augue id magna semper rutrum. Duis bibendum, lectus ut viverra rhoncus, dolor nunc faucibus libero, eget facilisis enim ipsum id lacus. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Phasellus enim erat, vestibulum vel, aliquam a, posuere eu, velit. Pellentesque arcu. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Duis bibendum, lectus ut viverra rhoncus, dolor nunc faucibus libero, eget facilisis enim ipsum id lacus. Fusce consectetuer risus a nunc. Fusce nibh. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Integer in sapien. Integer lacinia. Etiam posuere lacus quis dolor.</p>
+
+  <p>Curabitur bibendum justo non orci. Integer pellentesque quam vel velit. Sed elit dui, pellentesque a, faucibus vel, interdum nec, diam. Integer tempor. Quisque porta. Phasellus rhoncus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas sollicitudin. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Fusce dui leo, imperdiet in, aliquam sit amet, feugiat eu, orci. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Fusce suscipit libero eget elit. Fusce tellus odio, dapibus id fermentum quis, suscipit id erat. Fusce nibh. Nunc auctor. Praesent vitae arcu tempor neque lacinia pretium.</p>
+
+  <p>Praesent in mauris eu tortor porttitor accumsan. Fusce dui leo, imperdiet in, aliquam sit amet, feugiat eu, orci. Integer in sapien. Mauris metus. Duis viverra diam non justo. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Sed elit dui, pellentesque a, faucibus vel, interdum nec, diam. Etiam ligula pede, sagittis quis, interdum ultricies, scelerisque eu. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Donec ipsum massa, ullamcorper in, auctor et, scelerisque sed, est. In sem justo, commodo ut, suscipit at, pharetra vitae, orci. Mauris dolor felis, sagittis at, luctus sed, aliquam non, tellus. Phasellus et lorem id felis nonummy placerat. Etiam quis quam. Nunc dapibus tortor vel mi dapibus sollicitudin.</p>
+
+  <p>Nullam rhoncus aliquam metus. Suspendisse sagittis ultrices augue. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Vivamus luctus egestas leo. Morbi imperdiet, mauris ac auctor dictum, nisl ligula egestas nulla, et sollicitudin sem purus in lacus. Nullam at arcu a est sollicitudin euismod. Etiam posuere lacus quis dolor. Etiam ligula pede, sagittis quis, interdum ultricies, scelerisque eu. Vivamus luctus egestas leo. Nulla non lectus sed nisl molestie malesuada. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Nunc auctor. Ut tempus purus at lorem. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat.</p>
+</div>
+
+<script>
+
+  document.getElementById("svg1").style.width = document.getElementById("fixdiv").offsetLeft - 100;
+  document.getElementById("svg2").style.width = document.getElementById("fixdiv").offsetLeft - 100;
+  document.getElementById("svg3").style.width = document.getElementById("fixdiv").offsetLeft - 100;
+  document.getElementById("svg4").style.width = document.getElementById("fixdiv").offsetLeft - 50;
+
+</script>
+
+
+</body>
+</html> 
